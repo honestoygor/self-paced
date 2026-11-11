@@ -24,6 +24,7 @@ reviews:
   auto_review:
     enabled: true # repos under 10 stars still need `@coderabbitai review`
     drafts: false
+    auto_pause_after_reviewed_commits: 0 # keep reviewing every push
   # Commits come only from the PR's coding thread, so CodeRabbit never pushes.
   finishing_touches:
     docstrings:

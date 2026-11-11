@@ -17,9 +17,10 @@ Everything in it, including issues, PR text and review threads, is public.
 - Run the `verify` command from `.github/project.yml` before opening the PR and
   include its result. CI runs the same command as the `verify` check.
 - Codex and CodeRabbit review every PR. Fix each finding, or answer it with a
-  reason, on the current head. If CodeRabbit hasn't reviewed (it needs a manual
-  trigger while the repo has fewer than 10 stars), comment `@coderabbitai review`.
-  If the Codex review is stale, comment `@codex review`.
+  reason, on the current head. While the repo has fewer than 10 stars,
+  CodeRabbit only reviews on request: comment `@coderabbitai review` whenever
+  its latest review doesn't cover the current head. If the Codex review is
+  stale, comment `@codex review`.
 - The owner merges after CI and both reviews pass. Don't merge unless the owner
   asks for that merge.
 - Status and priority live on the owner's "Work" project board, never in a file
