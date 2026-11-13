@@ -1,0 +1,67 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+# CodeRabbit on the free open-source plan. Review rules live in AGENTS.md, which
+# CodeRabbit reads as code guidelines; don't copy them here.
+language: en-US
+enable_free_tier: true
+early_access: false # keeps the separately billed Slack/Agent features off
+
+reviews:
+  profile: chill
+  # The owner merges. A bot "changes requested" review would block the loop's
+  # readiness check, so CodeRabbit only comments.
+  request_changes_workflow: false
+  fail_commit_status: false
+  # Keep the PR description (Closes #n and the Done when checklist) as written.
+  high_level_summary_in_walkthrough: true
+  assess_linked_issues: true
+  # kind:/risk: labels are set on the issue while shaping, not by a bot.
+  suggested_labels: false
+  auto_apply_labels: false
+  suggested_reviewers: false
+  sequence_diagrams: false
+  in_progress_fortune: false
+  poem: false
+  auto_review:
+    enabled: true # repos under 10 stars still need `@coderabbitai review`
+    drafts: false
+    auto_pause_after_reviewed_commits: 0 # keep reviewing every push
+  # Commits come only from the PR's coding thread, so CodeRabbit never pushes.
+  finishing_touches:
+    docstrings:
+      enabled: false
+    unit_tests:
+      enabled: false
+    simplify:
+      enabled: false
+    autofix:
+      enabled: false
+    fix_ci:
+      enabled: false
+    resolve_merge_conflict:
+      enabled: false
+  pre_merge_checks:
+    docstrings:
+      mode: "off"
+    title:
+      mode: warning
+    description:
+      mode: warning
+    issue_assessment:
+      mode: warning
+
+knowledge_base:
+  code_guidelines:
+    enabled: true
+    filePatterns:
+      - "**/AGENTS.md"
+  learnings:
+    scope: local
+
+# Issues are shaped by the owner, so CodeRabbit doesn't post plans on them.
+issue_enrichment:
+  auto_enrich:
+    enabled: false
+  planning:
+    enabled: false
+    auto_planning:
+      enabled: false
