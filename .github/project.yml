@@ -2,6 +2,7 @@ version: 1
 base_branch: main
 verify: bash scripts/verify.sh
 checks: [verify]
+codex_review: true
 merge:
   green: maintainer merges until this repo earns agent merges
   yellow: agent prepares, maintainer merges
